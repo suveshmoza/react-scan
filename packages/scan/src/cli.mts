@@ -180,6 +180,25 @@ program
         process.exit(0);
       }
 
+      const { runDoctor } = await prompts({
+        type: 'confirm',
+        name: 'runDoctor',
+        message: 'Install React Doctor?',
+        initial: true,
+      });
+
+      if (runDoctor) {
+        try {
+          console.log(pc.dim('\n  Installing React Doctor...\n'));
+          execSync('npx -y react-doctor@latest install --yes', {
+            cwd,
+            stdio: 'inherit',
+          });
+        } catch {
+          console.log(pc.dim('\n  React Doctor installation skipped.\n'));
+        }
+      }
+
       console.log();
       console.log(`${pc.green('  Success!')} React Scan has been installed.`);
       console.log(pc.dim('  You may now start your development server.\n'));
