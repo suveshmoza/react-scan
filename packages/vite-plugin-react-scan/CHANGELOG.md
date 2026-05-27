@@ -1,5 +1,13 @@
 # @react-scan/vite-plugin-react-scan
 
+## 0.2.7
+
+### Patch Changes
+
+- fix
+- Updated dependencies
+  - react-scan@0.5.7
+
 ## 0.2.6
 
 ### Patch Changes
